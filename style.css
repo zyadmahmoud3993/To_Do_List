@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&family=Oswald:wght@200..700&display=swap');
+
+* {
+    user-select: none;
+    font-family: "Cairo Play", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-variation-settings:
+        "slnt" 0;
+}
+
+
+.done {
+    text-decoration-line: line-through;
+    text-decoration-color: rgba(112, 23, 159, 0.7);
+    text-decoration-style: wavy;  
+    text-decoration-thickness: 2.5px;
+}
+
+span {
+    cursor: pointer;
+    font-size: 20px;
+    width: 50%;
+    overflow-x: scroll;
+    font-weight: 660 !important;
+}
+
+::-webkit-scrollbar {
+    height: 3px;
+    width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ffc107;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(214, 75, 75);
+}
+
+.btn-warning.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.Tasks_List {
+    max-height: 70vh !important;
+    overflow-y: scroll;
+    padding-right: 1px;
+}
+
+.Tasks_List::-webkit-scrollbar-thumb {
+    background: red;
+    /* make scrollbar transparent */
+}
+
+.rounded {
+    box-shadow: 0 0 10px 10px whitesmoke;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.rounded::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 500%;
+    height: 500%;
+    top: -200%;
+    left: -200%;
+    background: linear-gradient(#1900fa, #ff0000);
+    animation: ani 2s linear infinite;
+}
+
+.rounded::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    inset: 3px;
+    background: white;
+    border-radius: 5px;
+}
+
+@keyframes ani {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#lottie-player.zoom {
+    animation: zoom 9s linear both;
+}
+
+@keyframes zoom {
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+        display: none;
+    }
+}
